@@ -25,8 +25,8 @@ from globals import *
 
 # ========= Layout ========= #
 layout = dbc.Card([
-                html.H1("MyBudget", className="text-primary"),
-                html.P("By ASIMOV", className="text-info"),
+                html.H2("Dani Finanças", className="text-primary"),
+                html.P("By Jonas", className="text-info"),
                 html.Hr(),
 
 
@@ -36,14 +36,14 @@ layout = dbc.Card([
                 ], style={'background-color': 'transparent', 'border-color': 'transparent'}),
 
                 dbc.Modal([
-                    dbc.ModalHeader(dbc.ModalTitle("Selecionar Perfil")),
+                    dbc.ModalHeader(dbc.ModalTitle("Selecionar perfil:")),
                     dbc.ModalBody([
                         dbc.Row([
                             dbc.Col([
                                 dbc.Card([
                                     dbc.CardImg(src="/assets/img_hom.png", className='perfil_avatar', top=True),
                                     dbc.CardBody([
-                                        html.H4("Perfil Homem", className="card-title"),
+                                        html.H4("Jonas", className="card-title"),
                                         html.P(
                                             "Um Card com exemplo do perfil Homem. Texto para preencher o espaço",
                                             className="card-text",
@@ -56,7 +56,7 @@ layout = dbc.Card([
                                 dbc.Card([
                                     dbc.CardImg(src="/assets/img_fem2.png", top=True, className='perfil_avatar'),
                                     dbc.CardBody([
-                                        html.H4("Perfil Mulher", className="card-title"),
+                                        html.H4("Daniely", className="card-title"),
                                         html.P(
                                             "Um Card com exemplo do perfil Mulher. Texto para preencher o espaço",
                                             className="card-text",
@@ -71,7 +71,7 @@ layout = dbc.Card([
                                 dbc.Card([
                                     dbc.CardImg(src="/assets/img_home.png", top=True, className='perfil_avatar'),
                                     dbc.CardBody([
-                                        html.H4("Perfil Casa", className="card-title"),
+                                        html.H4("Família", className="card-title"),
                                         html.P(
                                             "Um Card com exemplo do perfil Casa. Texto para preencher o espaço",
                                             className="card-text",
@@ -127,7 +127,8 @@ layout = dbc.Card([
                             dbc.Col([
                                     dbc.Label("Descrição: "),
                                     dbc.Input(placeholder="Ex.: dividendos da bolsa, herança...", id="txt-receita"),
-                            ], width=6), 
+                            ], width=6),
+
                             dbc.Col([
                                     dbc.Label("Valor: "),
                                     dbc.Input(placeholder="$100.00", id="valor_receita", value="")
@@ -172,7 +173,9 @@ layout = dbc.Card([
                                                     dbc.Button("Adicionar", className="btn btn-success", id="add-category-receita", style={"margin-top": "20px"}),
                                                     html.Br(),
                                                     html.Div(id="category-div-add-receita", style={}),
-                                                ], width=6),
+                                                ], width=5),
+
+                                                dbc.Col(width=2),
 
                                                 dbc.Col([
                                                     html.Legend("Excluir categorias", style={'color': 'red'}),
@@ -185,7 +188,7 @@ layout = dbc.Card([
                                                             "borderColor": "#ea6258"},
                                                     ),                                                            
                                                     dbc.Button("Remover", color="warning", id="remove-category-receita", style={"margin-top": "20px"}),
-                                                ], width=6)
+                                                ], width=5)
                                             ]),
                                         ], title="Adicionar/Remover Categorias",
                                     ),
@@ -263,7 +266,9 @@ layout = dbc.Card([
                                             dbc.Button("Adicionar", className="btn btn-success", id="add-category-despesa", style={"margin-top": "20px"}),
                                             html.Br(),
                                             html.Div(id="category-div-add-despesa", style={}),
-                                        ], width=6),
+                                        ], width=5),
+
+                                        dbc.Col(width=2),
 
                                         dbc.Col([
                                             html.Legend("Excluir categorias", style={'color': 'red'}),
@@ -276,7 +281,7 @@ layout = dbc.Card([
                                                     "borderColor": "#ea6258"},
                                             ),                                                            
                                             dbc.Button("Remover", color="warning", id="remove-category-despesa", style={"margin-top": "20px"}),
-                                        ], width=6)
+                                        ], width=5)
                                     ]),
                                 ], title="Adicionar/Remover Categorias",
                                 ),
@@ -304,7 +309,7 @@ layout = dbc.Card([
                     dbc.NavLink("Dashboard", href="/dashboards", active="exact"),
                     dbc.NavLink("Extratos", href="/extratos", active="exact"),
                 ], vertical=True, pills=True, id='nav_buttons', style={"margin-bottom": "50px"}),
-            ThemeChangerAIO(aio_id="theme", radio_props={"value":dbc.themes.QUARTZ})
+            ThemeChangerAIO(aio_id="theme", radio_props={"value":dbc.themes.BOOTSTRAP})
 
         ], id='sidebar_completa'
     )

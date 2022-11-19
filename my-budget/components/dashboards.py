@@ -25,6 +25,7 @@ graph_margin=dict(l=25, r=25, t=25, b=0)
 
 # =========  Layout  =========== #
 layout = dbc.Col([
+        # Saldo, Receita e Despesa
         dbc.Row([
             # Saldo
             dbc.Col([
@@ -69,7 +70,8 @@ layout = dbc.Col([
                 ], width=4),
         ], style={"margin": "10px"}),
 
-        dbc.Row([
+        dbc.Row([     
+            # Filtrar Lançamentos
             dbc.Col([
                 dbc.Card([
                         html.Legend("Filtrar lançamentos", className="card-title"),
@@ -93,10 +95,12 @@ layout = dbc.Col([
                             persistence_type="session",
                             multi=True
                         ),
+                        
                         html.Legend("Período de Análise", style={"margin-top": "10px"}),
                         dcc.DatePickerRange(
-                            month_format='Do MMM, YY',
+                            month_format='DD MMM, YYYY',
                             end_date_placeholder_text='Data...',
+                            display_format='DD MMM, YY',
                             start_date=datetime.today(),
                             end_date=datetime.today() + timedelta(days=31),
                             with_portal=True,
@@ -108,9 +112,11 @@ layout = dbc.Col([
 
             ], width=4),
 
+            # Gráfico 1
             dbc.Col(dbc.Card(dcc.Graph(id="graph1"), style={"height": "100%", "padding": "10px"}), width=8),
         ], style={"margin": "10px"}),
 
+        # Gráfico 2, 3, e 4
         dbc.Row([
             dbc.Col(dbc.Card(dcc.Graph(id="graph2"), style={"padding": "10px"}), width=6),
             dbc.Col(dbc.Card(dcc.Graph(id="graph3"), style={"padding": "10px"}), width=3),
