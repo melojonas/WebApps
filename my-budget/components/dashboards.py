@@ -7,10 +7,17 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 import calendar
+
+#tentativa de corrigir a importação de pasta pai
+'''import sys, os
+
+current = os.path.dirname(os.path.realpath(__name__))
+parent = os.path.dirname(current)
+sys.path.append(current)''' 
+
 from globals import *
 from app import app
 
-import pdb
 from dash_bootstrap_templates import template_from_url, ThemeChangerAIO
 
 card_icon = {

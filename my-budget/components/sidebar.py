@@ -17,16 +17,10 @@ import numpy as np
 import pandas as pd
 from globals import *
 
-#df_cat_receita = pd.read_csv("C:\\Users\\Rodrigo\\Desktop\\Dash - Rodrigo Vanzelotti\\MyBudget\\MyBudget\\df_cat_receita.csv")
-#cat_receita = df_cat_receita['Categoria'].tolist()
-
-#df_cat_despesa = pd.read_csv("C:\\Users\\Rodrigo\\Desktop\\Dash - Rodrigo Vanzelotti\\MyBudget\\MyBudget\\df_cat_despesa.csv")
-#cat_despesa = df_cat_despesa['Categoria'].tolist()
-
 # ========= Layout ========= #
 layout = dbc.Card([
                 html.H2("Dani Finanças", className="text-primary"),
-                html.P("By Jonas", className="text-info"),
+                html.P("By Jonas and ASIMOV", className="text-info"),
                 html.Hr(),
 
 
